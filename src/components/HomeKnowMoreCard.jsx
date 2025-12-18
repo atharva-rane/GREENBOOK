@@ -6,7 +6,7 @@ import { useEffect } from "react";
 
 export default function HomeKnowMoreCard() {
   useEffect(() => {
-    AOS.init({ duration: 500 });
+    AOS.init({ duration: 1000 });
   });
   return (
     <div className="knowMore-container">
