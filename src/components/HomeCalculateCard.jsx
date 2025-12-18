@@ -25,8 +25,8 @@ export default function HomeCalculateCard() {
 
       <div className="column right">
         <div className="card">
-          <h1>Calculate Union</h1>
-          <button onClick={() => navigate("/union-page")}>Union</button>
+          <h1>Add Union</h1>
+          <button onClick={() => navigate("/union-page")}>Add</button>
         </div>
         <div className="info">
           <p>
