@@ -10,12 +10,7 @@ export default function HomeKnowMoreCard() {
   });
   return (
     <div className="knowMore-container">
-      <div
-        data-aos="fade-right"
-        data-aos-offset="300"
-        data-aos-easing="ease-in-sine"
-        className="image"
-      >
+      <div data-aos="zoom-in-down" className="image">
         <KnowMoreImage />
       </div>
     </div>
