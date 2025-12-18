@@ -12,7 +12,7 @@ export default function UnionsDashboard() {
     const fetchData = async () => {
       try {
         const response = await axios.get(
-          "https://greenbook-indol.vercel.app/api/unions"
+          "https://greenbook-backend.vercel.app/api/unions"
         );
         setUnions(
           Array.isArray(response.data)

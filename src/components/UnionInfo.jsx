@@ -12,7 +12,7 @@ export default function UnionInfo() {
 
   useEffect(() => {
     axios
-      .get(`https://greenbook-indol.vercel.app/api/unions/${id}`)
+      .get(`https://greenbook-backend.vercel.app/api/unions/${id}`)
       .then((res) => setUnion(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -22,7 +22,7 @@ export default function UnionInfo() {
   const deleteUser = async () => {
     try {
       await axios.delete(
-        `https://greenbook-indol.vercel.app/api/delete/union/${id}`
+        `https://greenbook-backend.vercel.app/api/delete/union/${id}`
       );
       navigate("/dashboard");
     } catch (error) {
