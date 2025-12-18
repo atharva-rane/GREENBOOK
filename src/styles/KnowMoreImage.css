@@ -1,0 +1,85 @@
+.knowImage-container {
+  display: flex;
+  align-items: center;
+  height: 30rem;
+  margin-left: 0 auto;
+  width: 80rem;
+  position: relative; /* needed for absolute positioning if required */
+}
+
+.message-box {
+  background-color: #7dcaa34b;
+  width: 80%; 
+  height: 25rem;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+}
+
+.message-box img {
+  width: 80rem; 
+  height: 25rem;
+}
+
+.message-box .overlay {
+    width: 75%;
+    height: 25rem;
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.49);
+}
+.message-box .message-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 25rem;
+    padding: 2rem;
+    line-height: 1.8rem;
+    justify-content: space-evenly;
+    position: absolute;
+    color: white;
+}
+
+.message-content button {
+  margin: 0 auto;
+  border: none;
+  width: 15rem;
+  height: 2.5rem;
+  background-color: #7dcaa3dd;
+  border-radius: 10px;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.message-content button:hover {
+    background-color: #7dcaa3;
+}
+
+.knowImage-box {
+  position: absolute;
+  right: 3%;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1; /* shift the image left over the message box */
+}
+
+.image-box {        
+  width: 38rem;
+}
+
+.knowMore-items {
+  display: flex;
+  align-items: center;
+  height: 6rem;
+  margin-top: -6.65rem;
+}
+
+.knowMore-items H2 {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+

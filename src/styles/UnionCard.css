@@ -1,0 +1,82 @@
+.unionCard-container {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  width: 65%;
+  height: 12rem;
+  background-color: #ffff;
+  border: 1px solid #DCEFE3;
+  border-radius: 8px;
+  padding: 0.8rem;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.farmer-image {
+  height: 10.5rem;
+  width: 10.5rem;
+  background-color: #E6F4EA;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.farmer-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transform: scale(1.2);
+  margin-top: 8px;
+}
+
+.unionContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  width: 80%;
+}
+
+.contentBox {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 1rem 8rem;
+  margin-top: 0.5rem;
+  width: 100%;
+}
+
+.contentBox h3 {
+    transform: translateX(4rem);
+    text-align: justify;
+}
+
+.unionName {
+    font-weight:500;
+    font-size: 25px;
+}
+
+
+.date {
+    position: absolute;
+    right: 2%;
+    bottom: 4%;
+}
+
+.viewBtn {
+    height: 2rem;
+    width: 7rem;
+    margin-top: 1rem;
+}
+
+.viewBtn button {
+    height: 2rem;
+    width: 7rem;
+    border: none;
+    background-color: #DCEFE3;
+    border-radius: 6px;
+}
+
+.viewBtn button:hover {
+  background-color: #bafcd2;
+  transition: 0.2s ;
+}

@@ -1,0 +1,113 @@
+.mainContainer {
+    margin-top: -1rem;
+    background-color: #edf5f0;
+    height: 70rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.infoContainer {
+display: flex;
+flex-direction: column;
+align-items: center;
+background-color: #ffff;
+margin-top: 3rem;
+padding: 2rem;
+border-radius: 10px;
+width: 75%;
+box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+}
+
+.infoContainer:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.12);
+}
+
+.infoContainer .name {
+    font-weight: 500;
+    font-size: 35px;
+}
+
+.farmerImage {
+    background-color: #E6F4EA;
+    width: 20rem;
+    height: 20rem;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 2rem 0 2rem 0;
+    border-radius: 10px;
+}
+
+.farmerImage:hover{
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+}
+
+.farmerImage img {
+    width: 25rem;
+    height: 25rem;
+    margin-bottom: -2rem;
+}
+
+.unionInformation {
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 3rem 3rem;
+    width: 100%;
+}
+
+.identity-box {
+    background-color: #E6F4EA;
+    border-radius: 10px;
+    padding: 1.5rem;
+    width: 31rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.identity-box:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+
+}
+
+.identity-box h3 span {
+    font-weight: 500;
+}
+
+.btns {
+    margin: 3rem;
+    display: flex;
+    gap: 5rem;
+}
+
+.btns button {
+    padding: 0.6rem 4rem 0.6rem 4rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+}
+
+.btns .deleteBtn{
+    background-color: rgb(255, 6, 6);
+    color: white;
+}
+
+.btns .deleteBtn:hover {
+    background-color: rgb(206, 0, 0);
+}
+
+.btns .updateBtn, .backBtn {
+    background-color: #a2f1bf;
+}
+
+.btns .updateBtn:hover {
+    background-color: #70af86;
+}
+
+.btns .backBtn:hover {
+    background-color: #70af86;
+}

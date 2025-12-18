@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Plus+Jakarta+Sans:ital,wght@0,600;1,600&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.cardBox {
+    width:360px;
+    overflow: hidden;
+    height: 520px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.cardBox img {
+    width: 100%;
+    height: 290px;
+    object-fit: cover;
+    object-position: top;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
+
+.data {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.data h2 {
+    font-size: 25px;
+    color: #1B5E20;
+    text-align: center;
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    padding: 0 0.6rem 0;
+}
+
+.data p {
+    font-size: 15px;
+    padding: 0 20px;
+    text-align: justify;
+    margin: 1rem 1rem 1rem 1rem ;
+    line-height: 1.6;
+    color: #2E7D32;
+}
+
+.cardBox:hover { 
+    transform: scale(1.04);
+    box-shadow: rgba(100, 100, 111, 0.3) 0px 10px 35px 0px;
+    transition: transform 0.3s ease;
+}

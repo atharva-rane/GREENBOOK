@@ -1,0 +1,27 @@
+.suggestion-container {
+    margin: 1rem;
+}
+
+.item {
+    padding: 2rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    height: 7.5rem;
+    width: 100%;
+    background-color: #ecfdf5;
+    border-radius: 10px;
+    margin: 1rem;
+}
+
+.item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(0,0,0.4,0.09);
+  transition: 0.2s ease-in-out;
+}
+
+.icon {
+    width: 5rem;
+    height: 5rem;
+}

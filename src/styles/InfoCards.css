@@ -1,0 +1,71 @@
+.carbonCredit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+}
+
+.infoCard-container {
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;   
+    align-items: center;
+    justify-content: center;  
+    gap: 3rem;    
+    background-color: rgba(195, 249, 230, 0.314);
+    padding: 3rem;
+    border-radius: 20px;
+    margin-bottom: 4rem;
+}
+
+.role {
+    display: flex;
+    width: 90%;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgba(195, 249, 230, 0.314);
+    gap: 1.5rem;
+    align-items: center;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.role h2 {
+    font-weight: 600;
+    font-size: 30px;
+    color: #1B5E20;
+}
+
+.role .role-img {
+    height: 100%;
+    width: 60rem;
+    overflow: hidden; /* IMPORTANT */
+    border-radius: 10px;
+      box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.19),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.role .role-content {
+    width: 58rem;
+    line-height: 2rem;
+    color: #1B5E20;
+    font-size: 18px;
+}
+
+
+
+
+
+@media (max-width: 900px) {
+    .infoCard-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 cards per line */
+    }
+}
+
+@media (max-width: 600px) {
+    .infoCard-container {
+        grid-template-columns: 1fr; /* 1 card per line */
+    }
+}

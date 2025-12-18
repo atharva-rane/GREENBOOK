@@ -1,0 +1,28 @@
+.chart-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+}
+
+
+.barChart,
+.doughnutChart {
+    flex: 1;
+  height: 350px;   /* 👈 REQUIRED */
+  max-width: 450px;
+  
+}
+
+@media (max-width: 768px) {
+  .chart-box {
+    flex-direction: column;
+  }
+
+  .barChart,
+  .doughnutChart {
+    height: 300px;
+    width: 55%;
+  }
+}

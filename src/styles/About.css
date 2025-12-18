@@ -1,0 +1,85 @@
+.about-container {
+    margin-top: -1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6rem;
+}
+
+.aboutUs {
+    display: flex;
+    background-color: #faf3e8;;
+    padding: 2rem 8rem;
+    height: 48vh;
+    gap: 3rem 4rem;
+    margin: 0 auto;
+}
+
+.aboutUs .aboutUs-img{
+    height: 100%;
+    width: 35rem;
+    overflow: hidden; /* IMPORTANT */
+    border-radius: 30px;
+      box-shadow: 
+    0 10px 25px rgba(0, 0, 0, 0.12),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+
+.aboutUs-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   /* COVER */
+}
+
+
+.aboutUs .about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    width: 45rem;
+    color: #1f2937;
+}
+
+.about-content .about-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #111827;
+  position: relative;
+}
+
+
+.about-content .about-text p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #4b5563; /* soft gray */
+  max-width: 90%;
+  text-align: justify;
+}
+
+
+.mission {
+    display: flex;
+    background-color: #ebf1fa;;
+    padding: 2rem 8rem;
+    height: 48vh;
+    gap: 3rem 4rem;
+    margin: 0 auto;
+}
+
+.mission .mission-img {
+    height: 100%;
+    width: 35rem;
+    flex-shrink: 0;   /* 🔥 THIS FIXES IT */
+    overflow: hidden;
+    border-radius: 30px;
+    box-shadow: 
+      0 10px 25px rgba(0, 0, 0, 0.12),
+      0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+.mission-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;   
+}

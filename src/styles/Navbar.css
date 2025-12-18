@@ -1,0 +1,22 @@
+/* FIX: Prevent navbar & body overflow */
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Optional animation for your leaf logo (if you use it somewhere else) */
+.leaf {
+  display: inline-block;
+  animation: leafFloat 2s infinite ease-in-out;
+}
+
+@keyframes leafFloat {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-6px) rotate(6deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
