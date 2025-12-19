@@ -6,6 +6,7 @@ import axios from "axios";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Loading from "./Loading";
+import Companies from "./Companies";
 
 export default function UnionsDashboard() {
   const [unions, setUnions] = useState([]);
@@ -48,6 +49,7 @@ export default function UnionsDashboard() {
           <UnionCard key={union._id} union={union} />
         ))}
       </div>
+      <Companies />
     </div>
   );
 }
