@@ -4,6 +4,7 @@ import axios from "axios";
 import Navbar from "./Navbar";
 import farmerUnion from "../assets/farmerUnion.png";
 import "../styles/UnionInfo.css";
+import Loading from "./Loading";
 
 export default function UnionInfo() {
   const { id } = useParams();
@@ -17,7 +18,7 @@ export default function UnionInfo() {
       .catch((err) => console.error(err));
   }, [id]);
 
-  if (!union) return <p>Loading...</p>;
+  if (!union) return <Loading data="Details" />;
 
   const deleteUser = async () => {
     try {
