@@ -12,9 +12,7 @@ export default function Home() {
       <HomeCard />
       <br />
       <br />
-      <br />
-      <br />
-      <br />
+
       <Slider />
     </div>
   );
