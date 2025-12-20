@@ -16,10 +16,18 @@ export default function UnionCard({ union }) {
         <div className="unionContent">
           <h3 className="unionName">{union.unionName}</h3>
           <div className="contentBox">
-            <h3>State: {union.state}</h3>
-            <h3>District: {union.district}</h3>
-            <h3>Credits Available: {union.creditsAvailableForSale}</h3>
-            <h3>Vintage Year: {union.vintageYear}</h3>
+            <h3>
+              <span>State:</span> {union.state}
+            </h3>
+            <h3>
+              <span>District:</span> {union.district}
+            </h3>
+            <h3>
+              <span>Credits Available:</span> {union.creditsAvailableForSale}
+            </h3>
+            <h3>
+              <span>Vintage Year:</span> {union.vintageYear}
+            </h3>
           </div>
           <div className="viewBtn">
             <button onClick={handleViewButton}>View Details</button>

@@ -5,6 +5,8 @@ import Navbar from "./Navbar";
 import farmerUnion from "../assets/farmerUnion.png";
 import "../styles/UnionInfo.css";
 import Loading from "./Loading";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
 
 export default function UnionInfo() {
   const { id } = useParams();
@@ -29,6 +31,13 @@ export default function UnionInfo() {
     } catch (error) {
       console.error("Error deleting union:", error);
     }
+  };
+
+  let totalAvg = () => {
+    return (
+      ((union.maxPricePerCredit + union.minPricePerCredit) / 2) *
+      union.creditsAvailableForSale
+    );
   };
 
   return (
@@ -92,10 +101,17 @@ export default function UnionInfo() {
 
           <div className="identity-box">
             <h3>
-              <span>Min Price:</span> {union.minPricePerCredit}
+              <span>Min Price:</span>{" "}
+              <FontAwesomeIcon icon={faIndianRupeeSign} />
+              {union.minPricePerCredit} &nbsp; &nbsp; &nbsp;
+              <span>Max Price:</span>{" "}
+              <FontAwesomeIcon icon={faIndianRupeeSign} />
+              {union.maxPricePerCredit}
             </h3>
             <h3>
-              <span>Max Price:</span> {union.maxPricePerCredit}
+              <span>Avg Selling Price:</span>&nbsp;
+              <FontAwesomeIcon icon={faIndianRupeeSign} />
+              {totalAvg()}
             </h3>
             <h3>
               <span>Contact Name:</span> {union.contactName}
