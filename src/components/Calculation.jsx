@@ -19,6 +19,7 @@ export default function Calculation() {
   const [showResult, setShowResult] = useState(false);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showCharts, setShowCharts] = useState(false);
+  const [showAddUnionBtn, setShowAddUnionBtn] = useState(false);
 
   let navigate = useNavigate();
 
@@ -103,10 +104,15 @@ export default function Calculation() {
     setShowResult(true);
     setShowCharts(true);
     setShowSuggestions(true);
+    setShowAddUnionBtn(true);
+  };
+
+  let handleAddUnionBtn = () => {
+    navigate("/union-page");
   };
 
   return (
-    <div>
+    <div className="main-calcContainer">
       <Navbar />
       <div>
         <div className="container">
@@ -207,6 +213,11 @@ export default function Calculation() {
             energyUse={energyUsage}
             energyHours={energyHrs}
           />
+        )}
+      </div>
+      <div className="addUnionBtn">
+        {showAddUnionBtn && (
+          <button onClick={handleAddUnionBtn}>Add Your Union</button>
         )}
       </div>
     </div>

@@ -6,6 +6,12 @@
   font-style: normal;
 }
 
+.main-calcContainer {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 3rem;
+}
+
 .container {
   border: 2px solid black;
   border-radius: 10px;
@@ -68,4 +74,24 @@
     background-color: #109753;  
     color: #ffff;
     transition: 0.1s ease-in-out;
+}
+
+.addUnionBtn {
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.addUnionBtn button {
+  width: 25rem ;
+  height: 2.5rem;  
+  border: 1px solid ;
+  border-radius: 10px;
+  font-size: 15px;
+  background-color: #f11818cf;
+  color: #ffff;
+}
+
+.addUnionBtn button:hover {
+  background-color: #bc0505c0;
+  color: #ffff;
 }
