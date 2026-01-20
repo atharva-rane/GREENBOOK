@@ -6,6 +6,7 @@ import toast from "react-hot-toast";
 export default function Stage4() {
   let navigate = useNavigate();
   const { unionData, setUnionData } = useOutletContext();
+  const baseUrl = "https://greenbook-backend.vercel.app/api";
 
   const handleChange = (e) => {
     setUnionData({ ...unionData, [e.target.name]: e.target.value });
@@ -14,11 +15,16 @@ export default function Stage4() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+    const email = localStorage.getItem("email");
+    const sessionId = localStorage.getItem("sessionId");
+    const useAuthRoute = Boolean(email && sessionId);
+    const endpoint = useAuthRoute ? `${baseUrl}/auth/union` : `${baseUrl}/union`;
+    const payload = useAuthRoute
+      ? { ...unionData, email, sessionId }
+      : unionData;
+
     try {
-      const response = await axios.post(
-        "https://greenbook-backend.vercel.app/api/union",
-        unionData
-      );
+      const response = await axios.post(endpoint, payload);
       console.log("Union submitted:", response.data);
       toast.success(response.data.message, { position: "top-right" });
       navigate("/dashboard");
