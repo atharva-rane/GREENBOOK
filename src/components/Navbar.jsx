@@ -18,7 +18,7 @@ import Divider from "@mui/material/Divider";
 import { useNavigate, useLocation } from "react-router-dom"; // <-- useLocation added
 import "../styles/Navbar.css";
 
-const pages = ["Home", "About", "Carbon-Credits", "Dashboard"];
+const pages = ["Home", "About", "Carbon-Credits", "Dashboard", "Login", "Register"];
 
 export default function Navbar() {
   const [dark, setDark] = React.useState(false);

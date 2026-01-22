@@ -14,6 +14,10 @@ import Dashboard from "./components/Dashboard";
 import InfoCard from "./components/InfoCards";
 import { Toaster } from "react-hot-toast";
 import UnionInfo from "./components/UnionInfo";
+import Login from "./components/Login";
+import Register from "./components/Register";
+import FarmerDashboard from "./components/FarmerDashboard";
+import CorporateDashboard from "./components/CorporateDashboard";
 
 function App() {
   return (
@@ -35,6 +39,11 @@ function App() {
         </Route>
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/union-information/:id" element={<UnionInfo />} />
+        <Route path="/farmer-dashboard" element={<FarmerDashboard />} />
+        <Route path="/corporate-dashboard" element={<CorporateDashboard />} />
+
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
       </Routes>
       <Toaster />
     </div>
