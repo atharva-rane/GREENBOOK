@@ -8,3 +8,32 @@
     padding-bottom: 2rem; /* optional: for spacing at the bottom */
     flex-direction: column-reverse;
 }
+
+.dashboard-filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 1.5rem 2rem 0.5rem;
+    background-color: #edf5f0;
+    align-items: flex-end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    min-width: 160px;
+}
+
+.filter-group label {
+    font-weight: 600;
+    color: #1f3d2f;
+}
+
+.filter-input {
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    border: 1px solid #c7d9cf;
+    font-size: 0.95rem;
+    background-color: #fff;
+}

@@ -1,4 +1,4 @@
-const URI = "http://localhost:3000/api";
+const URI = "https://greenbook-backend.vercel.app/api";
 
 function formDataConvert(data) {
     // let output = new FormData();
@@ -79,6 +79,11 @@ let authenticator = new AsyncAPIHandler(null,
     {"email": localStorage.getItem("email"), "sessionId": localStorage.getItem("sessionId")},
     false, {"email": "email", "sessionId": "sessionId"});
 let dashboardData = new AsyncAPIHandler(authenticator);
+let corporateUnionsData = new AsyncAPIHandler(authenticator);
+let authenticatedUnionData = new AsyncAPIHandler(authenticator);
+let authenticatedUnionDeleteData = new AsyncAPIHandler(authenticator);
+let authenticatedUnionCreateData = new AsyncAPIHandler(authenticator);
+let authenticatedUnionUpdateData = new AsyncAPIHandler(authenticator);
 // let farmerDashboardData = new AsyncAPIHandler(authenticator);
 // let corportateDashboardData = new AsyncAPIHandler(authenticator);
 
@@ -107,6 +112,51 @@ export function dashboardHandler(data, subscriber) {
 
 export function getDashboardData() {
     return dashboardData.data;
+}
+
+export function corporateUnionsHandler(data, subscriber) {
+    corporateUnionsData.setSubscriber(subscriber);
+    corporateUnionsData.request("/auth/unions", formDataConvert(data));
+}
+
+export function getCorporateUnionsData() {
+    return corporateUnionsData.data;
+}
+
+export function authenticatedUnionByIdHandler(id, data, subscriber) {
+    authenticatedUnionData.setSubscriber(subscriber);
+    authenticatedUnionData.request(`/auth/unions/${id}`, formDataConvert(data));
+}
+
+export function getAuthenticatedUnionByIdData() {
+    return authenticatedUnionData.data;
+}
+
+export function authenticatedDeleteUnionHandler(id, data, subscriber) {
+    authenticatedUnionDeleteData.setSubscriber(subscriber);
+    authenticatedUnionDeleteData.request(`/auth/delete/union/${id}`, formDataConvert(data));
+}
+
+export function getAuthenticatedDeleteUnionData() {
+    return authenticatedUnionDeleteData.data;
+}
+
+export function authenticatedUnionCreateHandler(data, subscriber) {
+    authenticatedUnionCreateData.setSubscriber(subscriber);
+    authenticatedUnionCreateData.request("/auth/union", formDataConvert(data));
+}
+
+export function getAuthenticatedUnionCreateData() {
+    return authenticatedUnionCreateData.data;
+}
+
+export function authenticatedUpdateUnionHandler(id, data, subscriber) {
+    authenticatedUnionUpdateData.setSubscriber(subscriber);
+    authenticatedUnionUpdateData.request(`/auth/update/union/${id}`, formDataConvert(data));
+}
+
+export function getAuthenticatedUpdateUnionData() {
+    return authenticatedUnionUpdateData.data;
 }
 
 /*
