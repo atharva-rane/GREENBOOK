@@ -7,22 +7,68 @@ import "../styles/UnionInfo.css";
 import Loading from "./Loading";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faIndianRupeeSign } from "@fortawesome/free-solid-svg-icons";
+import {
+  authenticatedDeleteUnionHandler,
+  authenticatedUnionByIdHandler,
+  getAuthenticatedDeleteUnionData,
+  getAuthenticatedUnionByIdData,
+} from "../api/api.jsx";
 
 export default function UnionInfo() {
   const { id } = useParams();
   const [union, setUnion] = useState(null);
+  const [subscriber, setSubscriber] = useState(0);
+  const [deleteSubscriber, setDeleteSubscriber] = useState(0);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
   useEffect(() => {
+    const email = localStorage.getItem("email");
+    const sessionId = localStorage.getItem("sessionId");
+    const authenticated = Boolean(email && sessionId);
+    setIsAuthenticated(authenticated);
+
+    if (authenticated) {
+      authenticatedUnionByIdHandler(id, {}, setSubscriber);
+      return;
+    }
+
     axios
       .get(`https://greenbook-backend.vercel.app/api/unions/${id}`)
       .then((res) => setUnion(res.data))
       .catch((err) => console.error(err));
   }, [id]);
 
+  useEffect(() => {
+    if (subscriber > 0) {
+      const data = getAuthenticatedUnionByIdData();
+      if (data?.status && data.status !== 200) {
+        console.error("Error fetching union:", data.status);
+      } else {
+        setUnion(data);
+      }
+    }
+  }, [subscriber]);
+
+  useEffect(() => {
+    if (deleteSubscriber > 0) {
+      const data = getAuthenticatedDeleteUnionData();
+      if (data?.status && data.status !== 200) {
+        console.error("Error deleting union:", data.status);
+      } else {
+        navigate("/dashboard");
+      }
+    }
+  }, [deleteSubscriber, navigate]);
+
   if (!union) return <Loading data="Details" />;
 
   const deleteUser = async () => {
+    if (isAuthenticated) {
+      authenticatedDeleteUnionHandler(id, {}, setDeleteSubscriber);
+      return;
+    }
+
     try {
       await axios.delete(
         `https://greenbook-backend.vercel.app/api/delete/union/${id}`

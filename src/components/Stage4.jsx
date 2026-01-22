@@ -1,12 +1,61 @@
 import { useNavigate, useOutletContext } from "react-router-dom";
+import { useEffect, useState } from "react";
 import "../styles/Stage4.css";
 import axios from "axios";
 import toast from "react-hot-toast";
+import {
+  authenticatedUnionCreateHandler,
+  dashboardHandler,
+  getAuthenticatedUnionCreateData,
+  getDashboardData,
+} from "../api/api.jsx";
 
 export default function Stage4() {
   let navigate = useNavigate();
   const { unionData, setUnionData } = useOutletContext();
   const baseUrl = "https://greenbook-backend.vercel.app/api";
+  const [subscriber, setSubscriber] = useState(0);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [submitSubscriber, setSubmitSubscriber] = useState(0);
+
+  useEffect(() => {
+    const email = localStorage.getItem("email");
+    const sessionId = localStorage.getItem("sessionId");
+    const authenticated = Boolean(email && sessionId);
+    setIsAuthenticated(authenticated);
+    if (authenticated) {
+      dashboardHandler({}, setSubscriber);
+    }
+  }, []);
+
+  useEffect(() => {
+    if (subscriber > 0) {
+      const data = getDashboardData();
+      if (data?.status === 200) {
+        setUnionData((prev) => ({
+          ...prev,
+          contactName: data.name ?? prev.contactName,
+          email: data.email ?? prev.email,
+        }));
+      }
+    }
+  }, [subscriber, setUnionData]);
+
+  useEffect(() => {
+    if (submitSubscriber > 0) {
+      const data = getAuthenticatedUnionCreateData();
+      if (data?.status && data.status !== 200) {
+        toast.error(data.message || "Unable to submit union.", {
+          position: "top-right",
+        });
+      } else {
+        toast.success(data?.message || "Union Added Successfully!", {
+          position: "top-right",
+        });
+        navigate("/dashboard");
+      }
+    }
+  }, [submitSubscriber, navigate]);
 
   const handleChange = (e) => {
     setUnionData({ ...unionData, [e.target.name]: e.target.value });
@@ -22,6 +71,11 @@ export default function Stage4() {
     const payload = useAuthRoute
       ? { ...unionData, email, sessionId }
       : unionData;
+
+    if (useAuthRoute) {
+      authenticatedUnionCreateHandler(unionData, setSubmitSubscriber);
+      return;
+    }
 
     try {
       const response = await axios.post(endpoint, payload);
@@ -65,6 +119,7 @@ export default function Stage4() {
             name="contactName"
             value={unionData.contactName}
             onChange={handleChange}
+            readOnly={isAuthenticated}
           />
         </div>
 
@@ -75,6 +130,7 @@ export default function Stage4() {
             name="email"
             value={unionData.email}
             onChange={handleChange}
+            readOnly={isAuthenticated}
           />
         </div>
 
