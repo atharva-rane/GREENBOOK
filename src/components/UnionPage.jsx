@@ -16,8 +16,8 @@ export default function UnionPage() {
     totalVerifiedCredits: "2400",
     creditsAvailableForSale: "2200",
     creditType: "Removal",
-    minPricePerCredit: "320",
-    maxPricePerCredit: "640",
+    minPricePerCredit: "3500",
+    maxPricePerCredit: "5000",
     contactName: "Green Book",
     email: "greenbook@gmail.com",
   });

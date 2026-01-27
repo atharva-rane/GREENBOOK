@@ -48,8 +48,8 @@ export function calculateCarbonCredits({
   const totalCredits = Math.max(0, totalCO2Kg / 1000);
 
   // 7️⃣ Earnings (₹)
-  const minEarning = totalCredits * 300;
-  const maxEarning = totalCredits * 800;
+  const minEarning = totalCredits * 3500;
+  const maxEarning = totalCredits * 5000;
 
   return {
     co2FromTrees,
