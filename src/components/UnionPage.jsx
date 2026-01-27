@@ -18,8 +18,8 @@ export default function UnionPage() {
     creditType: "Removal",
     minPricePerCredit: "320",
     maxPricePerCredit: "640",
-    contactName: "Sahil Katkar",
-    email: "sahilkatkar@gmail.com",
+    contactName: "Green Book",
+    email: "greenbook@gmail.com",
   });
 
   return (
