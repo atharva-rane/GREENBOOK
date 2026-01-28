@@ -1,0 +1,75 @@
+.single-farmer-container {
+    max-width: 900px;
+    width: 90%;
+    min-height: 25rem;   /* ⬅ instead of height */
+    height: auto;        /* allow growth */
+    margin: 0 auto;
+    margin-top: 4rem;
+    display: flex;
+    align-items: stretch; /* ⬅ important */
+    background-color: #00ff8022;
+    border-radius: 12px;
+    overflow: hidden;     /* clip image correctly */
+}
+
+
+/* LEFT IMAGE SECTION */
+.left-section {
+    flex: 1;
+    min-height: 100%;
+    overflow: hidden;
+}
+
+/* RESPONSIVE IMAGE */
+.singleFarmerImg {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* fills entire area */
+    display: block;         /* removes inline gaps */
+}
+
+/* RIGHT CONTENT */
+.right-section {
+    flex: 1;
+    display: flex;
+    justify-content: center; /* vertical center of container */
+    padding: 1.5rem;
+}
+
+.right-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* horizontal center */
+    text-align:justify;  /* centers h2 & paragraph text */
+}
+
+.right-section h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+}
+
+.right-section p {
+    font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+    margin: 0.5rem 0;
+}
+
+.right-section .singleFarmerInfo {
+    margin: 1rem 0;
+}
+
+.right-section button {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* 📱 MOBILE VIEW */
+@media (max-width: 768px) {
+    .single-farmer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .singleFarmerImg {
+        max-width: 90%;
+    }
+}

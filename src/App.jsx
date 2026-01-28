@@ -18,6 +18,8 @@ import Login from "./components/Login";
 import Register from "./components/Register";
 import FarmerDashboard from "./components/FarmerDashboard";
 import CorporateDashboard from "./components/CorporateDashboard";
+import VerifiedFarmer from "./VerifiedFarmer";
+import NonVerifiedFarmer from "./NonVerifiedFarmer";
 
 function App() {
   return (
@@ -44,6 +46,8 @@ function App() {
 
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/verified-farmer" element={<VerifiedFarmer />} />
+        <Route path="/non-verified-farmer" element={<NonVerifiedFarmer />} />
       </Routes>
       <Toaster />
     </div>
